@@ -15,6 +15,11 @@ public class HomeController {
 	public String home() {
 	return "welcome to Home API";	
 	}
+	
+	@GetMapping("/hello")
+	public String home() {
+	return "This is Hello API";	
+	}
 
 
 }
