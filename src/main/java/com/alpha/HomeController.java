@@ -20,6 +20,11 @@ public class HomeController {
 	public String hello() {
 	return "This is Hello API";	
 	}
+	
+	@GetMapping("/alpha")
+	public String alpha() {
+	return "This is Alpha API";	
+	}
 
 
 }
