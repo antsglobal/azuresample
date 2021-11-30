@@ -29,5 +29,10 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+            steps {
+                ansiblePlaybook credentialsId: 'ants', installation: 'ansible', inventory: 'ansible/hosts', playbook: 'ansible/deploy.yaml'
+            }
+        }
     }
 }

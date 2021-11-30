@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.alpha</groupId>
 	<artifactId>azuresample</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>azuresample</name>
 	<description>azure sample application</description>
 	<properties>
