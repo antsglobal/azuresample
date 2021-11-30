@@ -25,13 +25,13 @@ pipeline {
                 // failed, record the test results and archive the jar file.
                 success {
                     junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
+                    archiveArtifacts 'target/*.war'
                 }
             }
         }
         stage('Deploy') {
             steps {
-                sh "mv target/azuresample-*.jar target/azuresample.jar"
+                sh "mv target/azuresample-*.war target/azuresample.war"
                 ansiblePlaybook credentialsId: 'ants', installation: 'ansible-playbook', inventory: 'ansible/hosts', playbook: 'ansible/deploy.yaml'
             }
         }

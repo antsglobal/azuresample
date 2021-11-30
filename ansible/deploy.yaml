@@ -4,5 +4,5 @@
   tasks:
     - name: Deploy app to tomcat server
       copy:
-        src: ../target/azuresample.jar
-        dest: /opt/tomcat/webapps/azuresample.jar
+        src: ../target/azuresample.war
+        dest: /opt/tomcat/webapps/azuresample.war

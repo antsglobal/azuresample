@@ -1,2 +1,2 @@
 [web-servers]
-webserver1      ansible_ssh_host=13.232.187.140
+webserver1      ansible_ssh_host=3.7.188.183
