@@ -1,13 +1,12 @@
-package com.alpha;
+package net.codejava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AzuresampleApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AzuresampleApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
-
 }
