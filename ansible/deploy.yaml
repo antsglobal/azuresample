@@ -4,5 +4,5 @@
   tasks:
     - name: Deploy app to tomcat server
       copy:
-        src: /var/lib/jenkins/workspace/JenkinsPipeline/target/azuresample-*.jar
+        src: ./target/azuresample.jar
         dest: /opt/tomcat/webapps/azuresample.jar
