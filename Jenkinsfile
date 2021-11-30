@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sh "mv target/azuresample-*.jar target/azuresample.jar"
                 ansiblePlaybook credentialsId: 'ants', installation: 'ansible-playbook', inventory: 'ansible/hosts', playbook: 'ansible/deploy.yaml'
-            
+            }
         }
     }
 }
