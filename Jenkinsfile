@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "mv target/azuresample-*.war target/azuresample.war"
+                sh "mv target/api-*.war target/api.war"
                 ansiblePlaybook credentialsId: 'ants', installation: 'ansible-playbook', inventory: 'ansible/hosts', playbook: 'ansible/deploy.yaml'
             }
         }
