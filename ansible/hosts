@@ -1,0 +1,2 @@
+[web-servers]
+webserver1      ansible_ssh_host=3.7.188.183
