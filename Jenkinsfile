@@ -21,7 +21,7 @@ pipeline {
                 }
                 echo("Build version: ${VERSION}") 
                 sh "docker build -t prashanthdevaraj/azuresample:${VERSION} ."
-                sh "docker tag prashanthdevaraj/azuresample:${VERSION} azuresample:latest"
+                sh "docker tag prashanthdevaraj/azuresample:${VERSION} prashanthdevaraj/azuresample:latest"
                 withCredentials([string(credentialsId: 'docker-hub-password', variable: 'docker_hub_password')]) {
                     sh "docker login -u prashanthdevaraj -p ${docker_hub_password}"
                     sh "docker push prashanthdevaraj/azuresample:${VERSION}"
