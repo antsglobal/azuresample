@@ -25,7 +25,7 @@ public class HomeController {
 	@GetMapping("/index")
 	public String index() {
 		//appBean.getMessage()
-	return "welcome to Index API version 0.0.1";	
+	return "welcome to Index API version 0.0.2";	
 	}
 	@GetMapping("/home")
 	public String home() {
