@@ -1,7 +1,7 @@
 pipeline {
     // any of the servers
     agent any
-
+    def VERSION = "0.0.1"
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "maven3"
@@ -15,9 +15,12 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
-
-                // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                sh "mv target/azuresample-*.war target/azuresample.war"
+                script {
+                    VERSION = readMavenPom().getVersion()
+                }
+                echo("Build version: ${VERSION}") 
+                sh "docker build -t azuresample:${VERSION} ."
             }
 
             post {
@@ -29,11 +32,10 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        /*stage('Deploy') {
             steps {
-                sh "mv target/azuresample-*.war target/azuresample.war"
                 ansiblePlaybook credentialsId: 'ants', installation: 'ansible-playbook', inventory: 'ansible/hosts', playbook: 'ansible/deploy.yaml'
             }
-        }
+        }*/
     }
 }
