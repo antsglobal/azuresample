@@ -1,7 +1,7 @@
+def VERSION = "0.0.1"
 pipeline {
     // any of the servers
     agent any
-    def VERSION = "0.0.1"
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "maven3"
