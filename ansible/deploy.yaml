@@ -5,4 +5,4 @@
     - name: Deploy app to tomcat server
       copy:
         src: ../target/azuresample.war
-        dest: /var/lib/tomcat9/webapps/azuresample.war
+        dest: /var/lib/tomcat/webapps/azuresample.war
