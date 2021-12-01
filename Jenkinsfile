@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "mv target/api-*.war target/api.war"
+                //sh "mv target/api-*.war target/api.war"
                 ansiblePlaybook credentialsId: 'ants', installation: 'ansible-playbook', inventory: 'ansible/hosts', playbook: 'ansible/deploy.yaml'
             }
         }
