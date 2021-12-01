@@ -20,7 +20,13 @@ pipeline {
                     VERSION = readMavenPom().getVersion()
                 }
                 echo("Build version: ${VERSION}") 
-                sh "docker build -t azuresample:${VERSION} ."
+                sh "docker build -t prashanthdevaraj/azuresample:${VERSION} ."
+                sh "docker tag prashanthdevaraj/azuresample:${VERSION} azuresample:latest"
+                withCredentials([string(credentialsId: 'docker-hub-password', variable: 'docker_hub_password')]) {
+                    sh "docker login -u prashanthdevaraj -p ${docker_hub_password}"
+                    sh "docker push prashanthdevaraj/azuresample:${VERSION}"
+                    sh "docker push prashanthdevaraj/azuresample:latest"
+                }
             }
 
             post {
