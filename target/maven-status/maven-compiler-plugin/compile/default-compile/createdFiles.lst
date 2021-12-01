@@ -1,0 +1,9 @@
+com\alpha\model\UserDetails.class
+com\alpha\config\WebConfig.class
+com\alpha\config\SwagerConfiguration.class
+com\alpha\repository\UserRepository.class
+com\alpha\MyAppBean.class
+com\alpha\security\WebSecurityConfig.class
+com\alpha\model\UserLoginModel.class
+com\alpha\AzuresampleApplication.class
+com\alpha\HomeController.class

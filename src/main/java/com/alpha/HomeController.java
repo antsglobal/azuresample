@@ -19,9 +19,13 @@ public class HomeController {
 	@Autowired
 	UserRepository userRepository;
 	
+	@Autowired
+	MyAppBean appBean;
+	
 	@GetMapping("/index")
 	public String index() {
-	return "welcome to Index API";	
+		//appBean.getMessage()
+	return "welcome to Index API"+appBean.getMessage()+"---"+appBean.getEnv();	
 	}
 	@GetMapping("/home")
 	public String home() {
